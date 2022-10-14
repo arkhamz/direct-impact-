@@ -12,7 +12,7 @@ export default function CategoryFilter({data, handleFilterChange}){
         <div className="category-filter-container">
             {data.length > 0 && data.map(function(cat,index,arr){
 
-                return <div key={uuidv4()} >
+                return <div key={index} >
                     {/* <label htmlFor={`cat${index}`}>{cat}</label> */}
                     <label> {cat}</label>
                     <input type="checkbox" onChange={function(e){

@@ -10,8 +10,8 @@ function FilterBlock({handleFilterChange}){
     const categoryArrays = useMemo(() => specCategories(),[]);
 
     return <section className="filters">
-        {categoryArrays && categoryArrays.map(function(i){
-           return  <div key={uuidv4()} className="category-filter">
+        {categoryArrays && categoryArrays.map(function(i,index){
+           return  <div key={index} className="category-filter">
            <h4>{i.name}</h4>
            <CategoryFilter handleFilterChange={handleFilterChange} data={i.list}/>
                     </div>
