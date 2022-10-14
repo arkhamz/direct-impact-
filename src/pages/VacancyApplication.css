@@ -1,0 +1,36 @@
+.application{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.vacancy-info{
+    display:flex;
+    justify-content: center;
+}
+
+.application-form{
+    display: flex;
+    min-width: 80%;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 2px 2px 4px grey;
+    padding: 10px 5px;
+
+}
+
+.application input[type="text"],.application input[type="email"]{
+    border:none;
+    border-bottom: 1px solid black;
+    margin: 5px 0;
+    padding: 10px 10px;
+}
+
+.application label{
+    margin-right: 10px;
+}
+

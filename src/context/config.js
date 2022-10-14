@@ -1,10 +1,12 @@
 import { createContext, useReducer, useContext } from "react";
+import {v4 as uuidv4} from "uuid"
 
 import vacancies from "../Jobs.json"
 
 const initialState = {
     vacancies: vacancies,
-    vacancyDetail: null
+    vacancyDetail: null,
+    categories: null
 }
 
 const VacancyContext = createContext();
@@ -17,6 +19,9 @@ function vacancyReducer(state, action){
         
         case "CLEAR_DETAIL":
             return {...state, vacancyDetail: null}
+
+        case "SET_CATEGORIES":
+            return {...state, categories: action.payload}
     
         default:
             return state
@@ -42,8 +47,24 @@ export function ContextProvider({children}){
         dispatch({type: "CLEAR_DETAIL"});
     }
 
+    function setCategories(){
 
-    return <VacancyContext.Provider value={{state,dispatch, setDetail,clearDetail}}>
+        const specsIterator = state && Object.entries(state.vacancies[0].specs);
+        // const specs = 
+        const categories = specsIterator.map(function(item){
+            if(item[0] === "__typename"){
+                return null
+            } else{
+                return {title: item[0], id: uuidv4()};
+            }
+        });
+        categories.shift();
+        
+        dispatch({type:"SET_CATEGORIES", payload:categories });
+    }
+
+
+    return <VacancyContext.Provider value={{state,dispatch, setDetail,clearDetail, setCategories}}>
         {children}
     </VacancyContext.Provider>
     
@@ -53,3 +74,5 @@ export function useVacancyContext(){
 
     return useContext(VacancyContext);
 }
+
+
