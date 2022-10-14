@@ -13,6 +13,19 @@
 }
 
 .prev-meta{
+    display:flex;   
+}
+
+.prev-meta a{
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 2px 2px 4px grey;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
+.prev-specs{
     list-style-type: none;
     width: 100%;
     display: flex;
@@ -22,3 +35,4 @@
     font-weight: bold;
     justify-content: center;
 }
+

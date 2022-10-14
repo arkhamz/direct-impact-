@@ -2,6 +2,7 @@ import { tagRemover } from "../utils";
 import "./VacancyPreview.css"
 import { specFormatter } from "../utils";
 import {v4 as uuidv4} from "uuid";
+import {Link} from "react-router-dom"
 function VacancyPreview({data:vacancy}){
 
     const specsFormatted = specFormatter(vacancy.specs);
@@ -12,11 +13,14 @@ function VacancyPreview({data:vacancy}){
             <h2>{vacancy.title}</h2>
             <p>{tagRemover(vacancy.intro).substring(0,150)}...</p>
         </div>
-        <ul className="prev-meta">
+        <div className="prev-meta">
+            <ul className="prev-specs">
             {specsFormatted && specsFormatted.map(function(i){
                 return <span key={uuidv4()} >{i}</span>
             })}
-        </ul>
+            </ul>
+            <Link to={`/vacancies/${vacancy.jobId}`} >See More</Link>
+        </div>
 
 
     </article>
