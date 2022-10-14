@@ -15,6 +15,7 @@ export function tagRemover(text){
  * @returns array of vacancy specs
  */
 export function specFormatter(specObj){
+    
 
     const specsIterator = Object.entries(specObj);
 
