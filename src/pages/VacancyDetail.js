@@ -12,11 +12,14 @@ function VacancyDetail(){
 
     useEffect(function(){
 
+        // thunk gets detail by id, dispatches to state
         setDetail(id);
 
 
-
-    }, [])
+        return function(){
+            clearDetail();
+        }
+    }, []);
     
     return <section className="vacancy-detail">
         <div className="detail-intro">

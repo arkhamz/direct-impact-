@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react"
-import jobData from "../Jobs.json";
 import VacancyPreview from "../components/VacancyPreview";
 import "./VacancyLister.css"
+import { useVacancyContext } from "../context/config";
 
 function VacancyLister(){
 
-    const [vacancies,setVacancies] = useState(jobData)
-    console.log(vacancies);
+    const {state} = useVacancyContext();
+    const vacancies = state.vacancies;
 
-
+    
     return <section className="lister">
         <div className="filter-block"></div>
         <div className="vacancy-previews">
