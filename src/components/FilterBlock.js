@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 function FilterBlock(){
-    return <section className="filter-block">
+    return <section className="filters">
 
         <div className="education-filter"></div>
         <div className="region-filter"></div>

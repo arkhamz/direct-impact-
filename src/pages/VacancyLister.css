@@ -1,0 +1,11 @@
+.lister{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.vacancy-previews{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}

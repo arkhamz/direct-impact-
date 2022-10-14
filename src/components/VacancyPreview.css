@@ -1,0 +1,24 @@
+.vacancy-prev{
+    max-height: 400px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 2px 2px 4px silver;
+}
+
+.vacancy-prev h2{
+    margin-bottom: 1rem;
+}
+
+.prev-meta{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    justify-content: center;
+}
