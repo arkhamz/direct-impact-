@@ -1,21 +1,23 @@
 import {v4 as uuidv4} from "uuid";
+import { useState, useCallback, useMemo } from "react";
 import "./CategoryFilter.css"
+import React from "react";
 
-// renders a group of filter checkboxes for each spec
+// renders a group of filter checkboxes for unique spec values
 export default function CategoryFilter({data, handleFilterChange}){
-    // const {state} = useVacancyContext();
-    // const categories = state.categories;
+
+// calling a setter function or anything similar inside onChange causes the issue with no tick
 
     return(
         <div className="category-filter-container">
-            {data.length > 1 && data.map(function(cat,index,arr){
+            {data.length > 0 && data.map(function(cat,index,arr){
 
-                return <div key={uuidv4()} className="cat">
-                    <label htmlFor={`cat${index}`}>{cat}</label>
-                    <input type="checkbox" id={`cat${index}`} onChange={(e) => {
-                        e.preventDefault();
+                return <div key={uuidv4()} >
+                    {/* <label htmlFor={`cat${index}`}>{cat}</label> */}
+                    <label> {cat}</label>
+                    <input type="checkbox" onChange={function(e){
                         handleFilterChange(cat);
-                    } } />
+                    }} />
                 </div>
             })}
 
@@ -24,3 +26,4 @@ export default function CategoryFilter({data, handleFilterChange}){
 
 
 }
+

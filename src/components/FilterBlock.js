@@ -14,9 +14,8 @@ function FilterBlock({handleFilterChange}){
            return  <div key={uuidv4()} className="category-filter">
            <h4>{i.name}</h4>
            <CategoryFilter handleFilterChange={handleFilterChange} data={i.list}/>
-       </div>
+                    </div>
         })}
-
     </section>
 }
 
