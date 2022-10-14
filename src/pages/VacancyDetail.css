@@ -1,4 +1,85 @@
 .vacancy-detail{
+    margin-top: 10px;
     width: 100%;
     height: 100%;
+    /* display:flex;
+    flex-direction: column;
+    align-items: center; */
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.detail-intro{
+    padding: 10px 5px;
+    width: 80%;
+    height: 100%;
+    /* min-height: 150px; */
+    box-shadow: 2px 2px 4px grey;
+    display:flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.vacancy-title{
+    align-self: flex-start;
+}
+
+.detail-description{
+    width: 80%;
+    height: 100%;
+    padding: 10px 5px;
+    min-height: 150px;
+    box-shadow: 2px 2px 4px grey;
+    display:flex;
+    gap: 10px;
+    flex-direction:column;
+}
+
+.vacancy-description{
+    align-self: flex-start;
+    padding: 10px 5px;
+}
+
+.description-text{
+    align-self: flex-start;
+    padding: 10px 5px;
+
+    text-align: justify;
+}
+
+.recruiter{
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding-top: 10px;
+    min-height: 100px;
+    box-shadow: 2px 2px 4px silver;
+}
+
+.detail-specs{
+        width: 100%;
+        
+        display: flex;
+        flex-wrap: wrap;
+        align-self: flex-start;
+        gap: 4px;
+        font-size: 0.8rem;
+        font-weight: bold;
+}
+
+.apply {
+    width: 80%;
+}
+
+.apply button{
+    border:none;
+    background-color: white;
+    box-shadow: 2px 2px 4px 3px silver;
+    width: 150px;
+    padding: 10px 5px;
+    margin-bottom: 10px;
 }
