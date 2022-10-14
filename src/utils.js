@@ -56,8 +56,8 @@ export function specCategories(){
     const sector = [...new Set(vacancies.map(item => item.sector))]
     const companyType = [...new Set(vacancies.map(item => item.companyType))]
 
-    return {educationLevel,employmentLevel,experienceLevel,hoursPerWeek,
-    languages,region,city,industry,functionName,functionGroup,sector,companyType}
+    return [{name:"Education Level",list:educationLevel},{name:"Employment Level",list:employmentLevel},{name: "Experience level",list:experienceLevel},{name:"Working Hours",list:hoursPerWeek},
+    {name: "Languages",list:languages},{name:"Region",list:region},{name:"City",list:city},{name:"Industry",list:industry},{name:"Function",list:functionName},{name:"Function Group",list:functionGroup},{name: "Sector",list:sector},{name: "Company type",list:companyType}]
 }
 
 

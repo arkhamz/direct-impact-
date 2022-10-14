@@ -1,19 +1,27 @@
-
+import {v4 as uuidv4} from "uuid";
 import { useState,useMemo } from "react";
 import CategoryFilter from "./CategoryFilter";
 import { specCategories } from "../utils";
 import "./FilterBlock.css"
 
 
-function FilterBlock(){
+function FilterBlock({handleFilterChange}){
 
-    const {educationLevel,employmentLevel,experienceLevel,hoursPerWeek,languages,region,city,industry,functionName,functionGroup,sector,companyType} = useMemo(() => specCategories(),[])
+    const categoryArrays = useMemo(() => specCategories(),[]);
 
-    console.log(languages);
+
+
 
     return <section className="filters">
+        {categoryArrays && categoryArrays.map(function(i){
+           return  <div key={uuidv4()} className="category-filter">
+           <h4>{i.name}</h4>
+           <CategoryFilter data={i.list}/>
+       </div>
+        })}
 
-        <div className="category-filter">
+
+        {/* <div className="category-filter">
             <h4>Education level</h4>
             <CategoryFilter data={educationLevel}/>
         </div>
@@ -60,7 +68,7 @@ function FilterBlock(){
         <div className="category-filter">
             <h4>Company Type</h4>
             <CategoryFilter data={companyType}/>
-        </div>
+        </div> */}
 
         {/* <div className="education-filter"></div>
         <div className="region-filter"></div>

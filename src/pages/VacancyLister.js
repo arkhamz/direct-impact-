@@ -8,24 +8,23 @@ function VacancyLister(){
 
     const {state,setCategories} = useVacancyContext();
     const vacancies = state.vacancies;
-    const [categoryIds, setCategoryIds] = useState([]);
-    const [filtered, setFiltered] = useState();
+    const [filters, setFilters] = useState([]);
 
-     function handleFilterChange(id) {
-        //check if the categoryId array includes id already, if it does, remove it by filtering
-        if (categoryIds.includes(id)) {
+     function handleFilterChange(checkValue) {
+        //check if the filters array includes id already, if it does, remove it by filtering
+        if (filters.includes(checkValue)) {
           //filter out this id
-          const updated = categoryIds.filter(function (idNum, index) {
-            return idNum !== id;
+          const updated = filters.filter(function (checkVal) {
+            return checkVal !== checkValue;
           });
-          setCategoryIds(updated);
+          setFilters(updated);
         } else {
             // add id to the categoryIds
-          setCategoryIds([...categoryIds, id]);
+            setFilters([...filters, checkValue]);
         }
       }
 
-      let toShow = 
+      let toShow =  filters || vacancies;
    
     useEffect(function(){
         setCategories();
@@ -33,24 +32,24 @@ function VacancyLister(){
 
     useEffect(function(){
 
-        if(vacancies && categoryIds.length > 0){
+        if(vacancies && filters.length > 0){
             const filteredByCategory = vacancies.filter(function (
                 item,
                 index,
                 arr
               ) {
-                return categoryIds.includes(item.categoryId);
+                return filters.includes(item.categoryId);
               });
 
-              setFiltered(filteredByCategory)
+              setFilters(filteredByCategory)
         }
 
-    }, [categoryIds])
+    }, [filters])
 
     
     return <section className="lister">
         <div className="filter-block">
-            <FilterBlock/>
+            <FilterBlock handleFilterChange={handleFilterChange}/>
         </div>
         <div className="vacancy-previews">
             {vacancies && vacancies.map(function(vacancy){

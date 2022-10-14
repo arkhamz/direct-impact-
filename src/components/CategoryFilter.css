@@ -1,5 +1,12 @@
-.cat{
+/* .cat{
     display:flex;
     flex-direction:column;
-    gap: 1px;
+   
+} */
+
+.category-filter-container{
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top:10px
 }
