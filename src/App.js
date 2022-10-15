@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes,Route} from "react-router-dom";
+import {Routes,Route, Link} from "react-router-dom";
 import VacancyDetail from './pages/VacancyDetail';
 import VacancyLister from './pages/VacancyLister';
 import VacancyApplication from './pages/VacancyApplication';
@@ -12,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <Link to="/">Home</Link>
       <Routes>
         <Route path="/" element={<VacancyLister />}   />
         <Route path="/vacancies/:id" element={<VacancyDetail/>}   />
