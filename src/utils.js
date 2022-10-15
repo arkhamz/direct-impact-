@@ -61,17 +61,3 @@ export function specCategories(){
     {name: "Languages",list:languages},{name:"Region",list:region},{name:"City",list:city},{name:"Industry",list:industry},{name:"Function",list:functionName},{name:"Function Group",list:functionGroup},{name: "Sector",list:sector},{name: "Company type",list:companyType}]
 }
 
-
-// "specs": {
-//     "educationLevel": "MBO",
-//     "employmentTerm": "",
-//     "experienceLevel": "Medior (3-5 jr ervaring)",
-//     "hoursPerWeek": 40,
-//     "languages": "",
-//     "region": "Zuid-Holland",
-//     "city": "Dordrecht",
-//     "industry": "Office",
-//     "function": "Werkvoorbereider",
-//     "functionGroup": "Werkvoorbereiding",
-//     "sector": "Techniek",
-//     "companyType": "external"

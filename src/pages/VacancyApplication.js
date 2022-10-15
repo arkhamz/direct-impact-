@@ -48,7 +48,7 @@ function VacancyApplication(){
         // LOG THE STUFF
         console.log(`POST REQUEST, req.body contains {${firstName}, ${middleName},${lastName}, ${phone}, ${email}}`);
         //move to homepage onSubmit
-        // navigator("/");
+        navigator("/");
         clearFields();
     }
 
