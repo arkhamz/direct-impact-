@@ -71,7 +71,7 @@ function VacancyLister(){
         <div className="lister-filters">
 
         <div className="search-filter">
-         <input type="text" value={term} onChange={e => setTerm(e.target.value)} placeholder={"Vacancy itle"} />
+         <input type="text" value={term} onChange={e => setTerm(e.target.value)} placeholder={"Vacancy title"} />
         </div>
 
             <FilterBlock handleFilterChange={handleFilterChange}/>
